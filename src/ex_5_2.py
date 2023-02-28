@@ -22,5 +22,5 @@ if __name__ == "__main__":
     raw_data = np.loadtxt(INFILE)
     normed = (raw_data - raw_data.mean(axis=0)) / raw_data.std(axis=0)
     processed = normed
-    os.makedir(root_dir / "outputs", exist_ok=True)
+    os.makedirs(root_dir / "outputs", exist_ok=True)
     np.savetxt(OUTFILE, processed, fmt='%.2e')
