@@ -15,4 +15,4 @@ if __name__ == "__main__":
     parser.add_argument('infile',help='provide file path',nargs='?')
     args = parser.parse_args()
     if args.infile:
-        line_count(args.infile)
+        main(args.infile)
