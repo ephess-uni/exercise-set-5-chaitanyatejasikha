@@ -14,7 +14,7 @@ if __name__ == "__main__":
     parser.add_argument('infile',help='provide input file path',nargs='?')
     parser.add_argument('outfile',help='provide output file path',nargs='?')
     args = parser.parse_args()
-    raw_data = np.loadtxt(INFILE)
+    raw_data = np.loadtxt(args.infile)
     normed = (raw_data - raw_data.mean(axis=0)) / raw_data.std(axis=0)
     processed = normed
     os.makedirs(root_dir / "outputs", exist_ok=True)
