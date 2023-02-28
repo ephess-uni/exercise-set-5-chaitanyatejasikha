@@ -14,7 +14,7 @@ except ImportError:
 
 if __name__ == "__main__":
     import os
-    parser = argparse.ArgumentParser(description='This program applies a standard scale transform to the data in infile and writes it to outfile.')
+    parser = ArgumentParser(description='This program applies a standard scale transform to the data in infile and writes it to outfile.')
     parser.add_argument('infile',help='provide input file path',nargs='?')
     parser.add_argument('outfile',help='provide output file path',nargs='?')
     args = parser.parse_args()
