@@ -9,11 +9,14 @@ import numpy as np
 from argparse import ArgumentParser
 
 if __name__ == "__main__":
+    import argparse, os
     parser = argparse.ArgumentParser(description='This program applies a standard scale transform to the data in infile and writes it to outfile.')
     parser.add_argument('infile',help='provide input file path',nargs='?')
     parser.add_argument('outfile',help='provide output file path',nargs='?')
     args = parser.parse_args()
+    raw_data = np.loadtxt(INFILE)
     normed = (raw_data - raw_data.mean(axis=0)) / raw_data.std(axis=0)
     processed = normed
+    os.makedirs(root_dir / "outputs", exist_ok=True)
     np.savetxt(args.outfile, processed, fmt='%.2e')
 
